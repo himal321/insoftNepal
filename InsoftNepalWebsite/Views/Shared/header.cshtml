@@ -1,0 +1,37 @@
+﻿<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+        <a href="/home" class="nav-link @if (ViewBag.ActiveItem == "Home") {<text>active</text>}">HOME</a>
+    </li>
+    <li class="nav-item">
+        <a href="/AboutUs" class="nav-link @if (ViewBag.ActiveItem == "AboutUs") {<text>active</text>}">ABOUT US</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle @if (ViewBag.ActiveItem == "Portfolio") {<text>active</text>}" data-bs-toggle="dropdown" aria-current="page">OUR PORTFOLIO</a>
+        <ul class="dropdown-menu">
+            <li><a href="/OurPortfolio" class="dropdown-item fw-bold text-center fs-6">List All Portfolio</a></li>
+            <li><a href="/OurPortfolio/inSchoolErp" class="dropdown-item"><i class='bx bx-plus-circle bx-spin'></i>&nbsp;&nbsp;INSCHOOL ERP</a></li>
+            <li><a href="/OurPortfolio/tradePlus" class="dropdown-item"><i class='bx bx-plus-circle bx-spin'></i>&nbsp;&nbsp;TRADE PLUS</a></li>
+            <li><a href="/OurPortfolio/ezregi" class="dropdown-item"><i class='bx bx-plus-circle bx-spin'></i>&nbsp;&nbsp;EZREGI</a></li>
+            <li><a href="/OurPortfolio/hospitalPlus" class="dropdown-item"><i class='bx bx-plus-circle bx-spin'></i>&nbsp;&nbsp;HOSPITAL PLUS</a></li>
+            <li><a href="/OurPortfolio/payrollAndHrManagement" class="dropdown-item"><i class='bx bx-plus-circle bx-spin'></i>&nbsp;&nbsp;PAYROLL AND HR MANAGEMENT</a></li>
+            <li><a href="/OurPortfolio/atithiManager" class="dropdown-item"><i class='bx bx-plus-circle bx-spin'></i>&nbsp;&nbsp;ATITHI MANAGER</a></li>
+            <li><a href="/OurPortfolio/schoolExpress" class="dropdown-item"><i class='bx bx-plus-circle bx-spin'></i>&nbsp;&nbsp;SCHOOL EXPRESS</a></li>
+            
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a href="/Clients" class="nav-link @if (ViewBag.ActiveItem == "Clients") {<text>active</text>}">OUR CLIENTS</a>
+    </li>
+    <li class="nav-item">
+        <a href="/Blog" class="nav-link @if (ViewBag.ActiveItem == "Blogs") {<text>active</text>}">BLOGS</a>
+    </li>
+    <li class="nav-item">
+        <a href="/Contact" class="nav-link @if (ViewBag.ActiveItem == "Contact") {<text>active</text>}">CONTACT US</a>
+    </li>
+    <li class="nav-item" style="display:none">
+        <a href="/components/typography" class="nav-link">UI Kit</a>
+    </li>
+    <li class="nav-item" style="display:none">
+        <a href="#" class="nav-link">Docs</a>
+    </li>
+</ul>

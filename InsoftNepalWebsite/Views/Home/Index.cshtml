@@ -1,0 +1,1352 @@
+﻿@{
+    ViewBag.Title = "Home";
+    ViewBag.ActiveItem = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+
+    <link rel="stylesheet" media="screen" href="~/assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="~/assets/vendor/swiper/swiper-bundle.min.css">
+}
+<header class="header navbar navbar-expand-lg bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/" class="navbar-brand pe-3">
+            <img src="~/assets/img/logo/logoinsoft.png" alt="Insoft Nepal">
+@*             INSOFT&#127475;&#127477; *@
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">nav-link dropdown-toggle </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <partial name="~/Views/Shared/header.cshtml" />
+            </div>
+        </div>
+        <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+            <input type="checkbox" class="form-check-input" id="theme-mode">
+            <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
+            <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Hero slider + BG parallax -->
+<section class="jarallax bg-dark py-xxl-5" data-jarallax data-speed="0.4" data-bs-theme="dark">
+    <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-dark-translucent"></span>
+    <div class="jarallax-img" style="background-image: url('/assets/img/landing/software-agency-1/hero-bg.jpg');"></div>
+    <div class="position-relative text-center zindex-5 overflow-hidden pt-4 py-md-5">
+
+        <!-- Slider controls (Prev / next) -->
+        <button type="button" id="hero-prev" class="btn btn-prev btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 start-0 translate-middle-y d-none d-md-inline-flex ms-n3 ms-lg-2" aria-label="Previous">
+            <i class="bx bx-chevron-left fs-1"></i>
+        </button>
+        <button type="button" id="hero-next" class="btn btn-next btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 end-0 translate-middle-y d-none d-md-inline-flex me-n3 me-lg-2" aria-label="Next">
+            <i class="bx bx-chevron-right fs-1"></i>
+        </button>
+
+        <!-- Slider -->
+        <div class="container text-center py-xl-5">
+            <div class="row justify-content-center pt-lg-5">
+                <div class="col-xl-8 col-lg-9 col-md-10 col-11">
+                    <div class="swiper pt-5 pb-4 py-md-5" data-swiper-options='{
+                  "effect": "fade",
+                  "speed": 500,
+                  "autoplay": {
+                    "delay": 5500,
+                    "disableOnInteraction": false
+                  },
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "clickable": true
+                  },
+                  "navigation": {
+                    "prevEl": "#hero-prev",
+                    "nextEl": "#hero-next"
+                  }
+                }'>
+                        <div class="swiper-wrapper">
+
+                            <!-- Item -->
+                            <div class="swiper-slide">
+                                <h2 class="display-2 from-start mb-lg-4">INSOFT R&D</h2>
+                                <div class="from-end">
+                                    <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">Engage with Connected Ecosystem, Drive Intelligent Transactions, Innovate with Open Systems, Scale across Markets & Segments - with Platform based Digital Transformation.</p>
+                                </div>
+                                <div class="scale-up delay-1">
+                                    <a href="/OurPortfolio" class="btn btn-primary shadow-primary btn-lg">Products</a>
+                                </div>
+
+                            </div>
+
+                            <!-- Item -->
+                            <div class="swiper-slide">
+                                <h2 class="display-2 from-start mb-lg-4">Software Development and Tech Support</h2>
+                                <div class="from-end">
+                                    <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">We build complex web, desktop and mobile applications. With us you get quality software and perfect service every time.</p>
+                                </div>
+                                <div class="scale-up delay-1">
+                                    <a href="/Blog" class="btn btn-primary shadow-primary btn-lg">View case studies</a>
+                                </div>
+                            </div>
+
+                            <!-- Item -->
+                            <div class="swiper-slide">
+                                <h2 class="display-2 from-start mb-lg-4">24/7 Tech &amp; Business Support</h2>
+                                <div class="from-end">
+                                    <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">We ensure lifetime support of all applications we've built. Our support department is a team of professionals who will assist you 24/7.</p>
+                                </div>
+                                <div class="scale-up delay-1">
+                                    <a href="/Contact" class="btn btn-primary shadow-primary btn-lg">Work with us</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination (bullets) -->
+                        <div class="swiper-pagination position-relative d-md-none pt-2 mt-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-between position-relative zindex-5 pb-5">
+        <div class="d-flex mb-4 mb-sm-0">
+            <a href="https://www.linkedin.com/company/insoft-research-development" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-2" aria-label="LinkedIn">
+                <i class="bx bxl-linkedin"></i>
+            </a>
+            <a href="https://www.facebook.com/InsoftResearchAndDevelopment/" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-2" aria-label="Facebook">
+                <i class="bx bxl-facebook"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-2" aria-label="Twitter">
+                <i class="bx bxl-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@@insoftnepal9246" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-2" aria-label="YouTube">
+                <i class="bx bxl-youtube"></i>
+            </a>
+        </div>
+        <a href="/Blog" class="nav-link px-0">
+            Our case studies
+            <i class="bx bx-right-arrow-circle fs-4 ms-2"></i>
+        </a>
+    </div>
+</section>
+
+
+<!-- About -->
+<section class="container pt-5 mt-2 mt-md-4 mt-lg-5">
+    <div class="row pt-xl-3">
+        <div class="col-md-5 text-center text-md-start pb-5">
+            <h1 class="mb-4">Software Development and Tech Support</h1>
+            <p class="fs-lg pb-lg-3 mb-4">We create diverse, complex, web and mobile solutions for any business need. With us you get quality software and perfect service every time.</p>
+            <a href="/AboutUs" class="btn btn-primary shadow-primary btn-lg">More About Us</a>
+            <div class="mt-3 mt-sm-0 pt-4 pt-sm-5 mt-xl-4">
+                <h2 class="h6 mb-4">Some of our clients:</h2>
+                <img class="mx-1" src="~/assets/img/clients/icons8-adidas.svg" alt="Clients">
+                <a href="https://www.inf.org/"><img class="mx-1" src="~/assets/img/clients/inf-logo-68x68.png" width="50" height="50" alt="Clients"></a>
+                <a href="https://www.facebook.com/universalacademy2061/"><img class="mx-1" src="~/assets/img/clients/Universal-Academy.png" width="75" height="75" alt="Clients"></a>
+                <a href="https://www.facebook.com/smokingyak/"><img class="mx-1" src="~/assets/img/clients/Smoking-Yak.jpg" width="50" height="50" alt="Clients"></a>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-7 offset-xl-1 pb-4 pb-sm-3 pb-lg-0 mb-4 mb-sm-5 mb-lg-0">
+            <img src="~/assets/img/landing/software-agency-1/about-img.jpg" class="rounded-3 shadow-sm" alt="Image">
+        </div>
+    </div>
+</section>
+
+
+<!-- Services -->
+<section class="bg-secondary pb-md-2 pb-lg-5">
+    <div class="d-none d-lg-block" style="margin-top: -60px; padding-top: 60px;"></div>
+    <div class="container pb-4 pt-5">
+        <h2 class="h1 text-center text-md-start mb-lg-4 pt-1 pt-md-4">Working Process</h2>
+        <div class="row align-items-center pb-3 mb-lg-2">
+            <div class="col-md-12 text-center text-md-start">
+                <p class="fs-lg text-muted mb-md-0">We need to stop interrupting what people are interested. Check Our Awesome Working Flow.</p>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 me-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/workprocess/outline-widgets-24px-1.png" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Planning
+                        </h2>
+                        <p class="fs-sm text-body mb-0">A business plan is a written description of your business's future, a document that tells what you plan to do.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/services/icons/rocket.svg" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Super Ideas
+                        </h2>
+                        <p class="fs-sm text-body mb-0">Business ideas on this list have been growing in popularity recently start while working.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/workprocess/outline-format_shapes-24px-1.png" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Research Project
+                        </h2>
+                        <p class="fs-sm text-body mb-0">The creation of new knowledge or use of existing knowledge in a way so as to generate new concepts, and understandings.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/services/icons/analytics.svg" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Responsive Design
+                        </h2>
+                        <p class="fs-sm text-body mb-0">Responsive Web Applicationmakes your web page look good on all devices (desktops, phone etc.).</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/workprocess/outline-gradient-24px-1.png" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Creative Direction
+                        </h2>
+                        <p class="fs-sm text-body mb-0">Creative direction is often learned through practice and through mentorship.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/workprocess/coding-html-svgrepo-com.svg" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Coding & Development
+                        </h2>
+                        <p class="fs-sm text-body mb-0">Software development is the process of conceiving, specifying, designing, other software components.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Services -->
+@* <section class="bg-secondary pb-md-2 pb-lg-5">
+    <div class="d-none d-lg-block" style="margin-top: -60px; padding-top: 60px;"></div>
+    <div class="container pb-4 pt-5">
+        <h2 class="h1 text-center text-md-start mb-lg-4 pt-1 pt-md-4">Our Products</h2>
+        <div class="row align-items-center pb-5 mb-lg-2">
+            <div class="col-md-8 text-center text-md-start">
+                <p class="fs-lg text-muted mb-md-0">We are focused on helping brands grow through digital transformation services. We bring real solutions to each client’s problems through a deep understanding of their market, solution, and vision.</p>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
+                <a href="/OurPortfolio" class="btn btn-outline-primary btn-lg">See all products</a>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 me-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/services/icons/cms.svg" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            In SchoolERP
+                            <i class="bx bx-right-arrow-circle text-primary fs-3 ms-2"></i>
+                        </h2>
+                        <p class="fs-sm text-body mb-0">InschoolERP description</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/services/icons/rocket.svg" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Trade Plus
+                            <i class="bx bx-right-arrow-circle text-primary fs-3 ms-2"></i>
+                        </h2>
+                        <p class="fs-sm text-body mb-0">Trade Plus Decription</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/services/icons/mobile-app.svg" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Hospital Plus
+                            <i class="bx bx-right-arrow-circle text-primary fs-3 ms-2"></i>
+                        </h2>
+                        <p class="fs-sm text-body mb-0">Hospital Plus Description</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/services/icons/analytics.svg" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Atithi Manager
+                            <i class="bx bx-right-arrow-circle text-primary fs-3 ms-2"></i>
+                        </h2>
+                        <p class="fs-sm text-body mb-0">Atithi Manager Description</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/services/icons/web-search.svg" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            School Express
+                            <i class="bx bx-right-arrow-circle text-primary fs-3 ms-2"></i>
+                        </h2>
+                        <p class="fs-sm text-body mb-0">School Express Description</p>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Item -->
+            <div class="col py-4 my-2 my-sm-3">
+                <a href="/services/singlev1" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
+                    <div class="card-body pt-3">
+                        <div class="d-inline-block bg-primary shadow-primary rounded-3 position-absolute top-0 translate-middle-y p-3">
+                            <img src="~/assets/img/services/icons/timer.svg" class="d-block m-1" width="40" alt="Icon">
+                        </div>
+                        <h2 class="h4 d-inline-flex align-items-center">
+                            Payroll and Human Resource Management
+                            <i class="bx bx-right-arrow-circle text-primary fs-3 ms-2"></i>
+                        </h2>
+                        <p class="fs-sm text-body mb-0">Payroll And Human Resource Management Description</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section> *@
+
+
+<!-- Case studies -->
+@* <section class="bg-secondary pt-1">
+    <div class="container">
+        <h2 class="h1 text-center text-md-start mb-lg-4">Case Studies</h2>
+        <div class="row align-items-center pb-5">
+            <div class="col-md-8 col-lg-7 col-xl-6 text-center text-md-start">
+                <p class="fs-lg text-muted mb-md-0">We bring real solutions to each client’s problems through a deep understanding of their market, solution, and vision.</p>
+            </div>
+            <div class="col-md-4 col-lg-5 col-xl-6 d-flex justify-content-center justify-content-md-end">
+                <a href="/Blog" class="btn btn-outline-primary btn-lg">See all case studies</a>
+            </div>
+        </div>
+    </div> *@
+
+   @*  <div class="position-relative py-lg-4 py-xl-5">
+
+        <!-- Swiper tabs -->
+        <div class="swiper-tabs position-absolute top-0 start-0 w-100 h-100">
+            <div id="image-1" class="jarallax position-absolute top-0 start-0 w-100 h-100 swiper-tab active" data-jarallax data-speed="0.4">
+                <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-35"></span>
+                <div class="jarallax-img" style="background-image: url('/assets/img/landing/software-agency-1/case-study01.jpg');"></div>
+            </div>
+            <div id="image-2" class="jarallax position-absolute top-0 start-0 w-100 h-100 swiper-tab" data-jarallax data-speed="0.4">
+                <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-35"></span>
+                <div class="jarallax-img" style="background-image: url('/assets/img/landing/software-agency-1/case-study02.jpg');"></div>
+            </div>
+        </div>
+
+        <!-- Swiper slider -->
+        <div class="container position-relative zindex-5 py-5">
+            <div class="row py-2 py-md-3">
+                <div class="col-xl-5 col-lg-7 col-md-9">
+
+                    <!-- Slider controls (Prev / next) -->
+                    <div class="d-flex justify-content-center justify-content-md-start pb-3 mb-3">
+                        <button type="button" id="case-study-prev" class="btn btn-prev btn-icon btn-sm bg-white me-2" aria-label="Previous">
+                            <i class="bx bx-chevron-left"></i>
+                        </button>
+                        <button type="button" id="case-study-next" class="btn btn-next btn-icon btn-sm bg-white ms-2" aria-label="Next">
+                            <i class="bx bx-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Card -->
+                    <div class="card bg-white shadow-sm p-3">
+                        <div class="card-body">
+                            <div class="swiper" data-swiper-options='{
+                      "spaceBetween": 30,
+                      "loop": true,
+                      "tabs": true,
+                      "pagination": {
+                        "el": "#case-study-pagination",
+                        "clickable": true
+                      },
+                      "navigation": {
+                        "prevEl": "#case-study-prev",
+                        "nextEl": "#case-study-next"
+                      }
+                    }'>
+                                <div class="swiper-wrapper">
+
+                                    <!-- Item -->
+                                    <div class="swiper-slide" data-swiper-tab="#image-1">
+                                        <img src="~/assets/img/landing/software-agency-1/case-study-logo01.png" class="d-block mb-3" width="72" alt="Logo">
+                                        <h3 class="mb-2">Cashless payment case study</h3>
+                                        <p class="fs-sm text-muted border-bottom pb-3 mb-3">Payment Service Provider Company</p>
+                                        <p class="pb-2 pb-lg-3 mb-3">Aenean dolor elit tempus tellus imperdiet. Elementum, ac convallis morbi sit est feugiat ultrices. Cras tortor maecenas pulvinar nec ac justo. Massa sem eget semper...</p>
+                                        <a href="#" class="btn btn-primary">View case study</a>
+                                    </div>
+
+                                    <!-- Item -->
+                                    <div class="swiper-slide" data-swiper-tab="#image-2">
+                                        <img src="~/assets/img/landing/software-agency-1/case-study-logo02.png" class="d-block mb-3" width="72" alt="Logo">
+                                        <h3 class="mb-2">Smart tech case study</h3>
+                                        <p class="fs-sm text-muted border-bottom pb-3 mb-3">Data Analytics Company</p>
+                                        <p class="pb-2 pb-lg-3 mb-3">Adipiscing quis a at ligula. Gravida gravida diam rhoncus cursus in. Turpis sagittis tempor gravida phasellus sapien. Faucibus donec consectetur sed id sit nisl.</p>
+                                        <a href="#" class="btn btn-primary">View case study</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination (bullets) -->
+                    <div class="pt-4 mt-3" data-bs-theme="dark">
+                        <div id="case-study-pagination" class="swiper-pagination position-relative bottom-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ *@
+
+
+
+<!-- About -->
+<section class="container my-5 pt-xl-5 pt-lg-4 pt-md-3 pb-lg-5 pb-md-4 pb-3">
+    <h2 class="h1 mt-xl-3 mb-4 pb-3 text-center">Our Service Portfolio</h2>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs flex-nowrap justify-content-sm-center overflow-auto mb-lg-4 mb-3 pb-md-3 pb-2 text-nowrap" role="tablist">
+        <li class="nav-item">
+            <a href="#economic-analysis" class="nav-link active" data-bs-toggle="tab" role="tab">
+                <i class="bx bxs-school opacity-60 me-2 fs-lg"></i> 
+                InSchoolERP
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#investments" class="nav-link" data-bs-toggle="tab" role="tab">
+                <i class="bx bx-bar-chart-alt-2 opacity-60 me-2 fs-lg"></i>
+                TRADE PLUS
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#corporate-finance" class="nav-link" data-bs-toggle="tab" role="tab">
+                <i class="bx bx-hotel opacity-60 me-2 fs-lg"></i>
+                ATITHI MANAGER
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tabs content -->
+    <div class="tab-content mb-xl-3 py-4 bg-secondary rounded-3">
+
+        <!-- Economic Analysis -->
+        <div class="tab-pane fade show active" id="economic-analysis" role="tabpanel">
+            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+                    <h3 class="h2 mb-lg-4 mb-3">InSchoolERP</h3>
+                    <p class="mb-4 pb-lg-3">InSchoolERP is a digital platform that simplifies school management with features like account, exams, attendance, and more. It offers real-time solutions, 24/7 support, and seamless integration across web and mobile.</p>
+                    <a href="OurPortfolio/inSchoolErp" class="btn btn-primary">Learn more</a>
+                </div>
+                <div class="col-lg-6 col-md-7 mt-4 pt-md-0 pt-2">
+                   @*  <img src="~/assets/img/landing/saas-4/about/ERP1.png" class="d-block my-lg-2 mx-auto me-md-0" width="595" alt="Image"> *@
+                    <img src="~/assets/img/landing/saas-4/about/ERP1.png" class="d-block my-lg-2 mx-auto me-md-0" width="595" alt="Image" style="border: 4px solid #000; border-radius: 10px;">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Investments -->
+        <div class="tab-pane fade" id="investments" role="tabpanel">
+            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+                    <h3 class="h2 mb-lg-4 mb-3">TRADE PLUS</h3>
+                    <p class="mb-4 pb-lg-3">TRADE+ is a management system for departmental stores with multiple POS systems. It handles stock, orders, payments, and generates financial reports, offering features like barcode integration, tax management, and real-time analysis.</p>
+                    <a href="OurPortfolio/tradePlus" class="btn btn-primary">Learn more</a>
+                </div>
+                <div class="col-lg-6 col-md-7 mt-4 pt-md-0 pt-2">
+                    <img src="~/assets/img/landing/saas-4/about/trade.png" class="d-block my-lg-2 mx-auto me-md-0" width="595" alt="Image" style="border: 4px solid #000; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Corporate Finance -->
+        <div class="tab-pane fade" id="corporate-finance" role="tabpanel">
+            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
+                    <h3 class="h2 mb-lg-4 mb-3">Atithi Manager</h3>
+                    <p class="mb-4 pb-lg-3">Front Desk is a hotel and restaurant management system offering seamless booking, check-in, and service management. It includes booking integration, group or individual check-ins, room allocation, night audits, and various service charges. For restaurants, it handles table orders, POS, KOT/BOT management, takeaways, and multi-settlement modes, with automatic data posting to finance.</p>
+                    <a href="OurPortfolio/atithiManager" class="btn btn-primary">Learn more</a>
+                </div>
+                <div class="col-lg-6 col-md-7 mt-4 pt-md-0 pt-2">
+                    <img src="~/assets/img/landing/saas-4/about/atithi.png" class="d-block my-lg-2 mx-auto me-md-0" width="595" alt="Image" style="border: 4px solid #000; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-secondary pt-5">
+    <div class="container pt-2 pt-sm-3 pt-md-4 pt-lg-5">
+        <div class="row pt-xl-2 pt-xxl-4 pb-3 pb-sm-4 pb-md-5 mt-2">
+            <div class="col-md-6 col-xl-5 col-xxl-4">
+                <h2 class="h1">Driving <span class="text-primary">Innovation in the </span>Industries We Proudly Serve </h2>  
+            </div>
+            <div class="col-md-6 col-xl-5 offset-xl-2 offset-xxl-3">
+                <ul class="list-unstyled">
+                    <li class="d-flex fs-xl pb-2 mb-1">
+                        <i class="bx bx-donate-heart text-dark d-flex pe-1 me-2" style="margin-top: .375rem;"></i>
+                        Healthcare
+                    </li>
+                    <li class="d-flex fs-xl pb-2 mb-1">
+                        <i class="bx bx-candles text-dark d-flex pe-1 me-2" style="margin-top: .375rem;"></i>
+                        Fintech
+                    </li>
+
+                    <li class="d-flex fs-xl pb-2 mb-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="text-dark me-2" style="margin-top: .375rem; width: 24px; height: 24px;">
+                            <path d="M96 32C60.7 32 32 60.7 32 96l0 288 64 0L96 96l384 0 0 288 64 0 0-288c0-35.3-28.7-64-64-64L96 32zM224 384l0 32L32 416c-17.7 0-32 14.3-32 32s14.3 32 32 32l512 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-128 0 0-32c0-17.7-14.3-32-32-32l-128 0c-17.7 0-32 14.3-32 32z" />
+                        </svg>
+                        E-Learning
+                    </li>
+
+                    <li class="d-flex fs-xl pb-2 mb-1">
+                        <i class="bx bx-group text-dark d-flex pe-1 me-2" style="margin-top: .375rem;"></i>
+                        Customer Experience
+                    </li>
+                    @* <li class="d-flex fs-xl pb-2 mb-1">
+                        <i class="fa-solid fa-chalkboard text-dark d-flex pe-1 me-2" style="margin-top: .375rem;"></i>
+                        E-Learning
+                    </li> *@
+                  
+
+
+                    <li class="d-flex fs-xl">
+                        <i class="bx bxs-business text-dark d-flex pe-1 me-2" style="margin-top: .375rem;"></i>
+                        Real Estate
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Business category -->
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3">
+            <div class="col-10 col-sm-9 col-md-6 col-xl-7 d-flex justify-content-md-end order-md-2 pb-2 pb-md-0 mb-4 mb-md-0">
+                <img src="~/assets/img/landing/app-showcase-3/categories/business.png" width="642" alt="Businessman">
+            </div>
+            <div class="col-md-6 col-xl-5 order-md-1 text-center text-md-start">
+                <h2 class="mb-lg-4">For business services</h2>
+                <p class="fs-lg pb-4 mb-0">Our app simplifies the process of tracking your company's financial health. From cash flow analysis to expense tracking, our app offers a wide range of tools that help you make informed decisions about your business finances. Stay on top of your financial performance.</p>
+                <a href="/OurPortfolio" class="btn btn-outline-primary mt-1">
+                    Learn More
+                    <i class="bx bx-chevron-right fs-lg ms-2 me-n2"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Sturtups category -->
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3">
+            <div class="col-10 col-sm-9 col-md-6 col-xl-7 pb-2 pb-md-0 mb-4 mb-md-0">
+                <div class="pe-md-4 pe-xl-0">
+                    <img src="~/assets/img/landing/app-showcase-3/categories/startups.png" width="636" alt="Startupper">
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-5 text-center text-md-start">
+                <h2 class="mb-lg-4">Offer for startups</h2>
+                <p class="fs-lg pb-4 mb-0">Starting a new business is a challenging venture, and managing your finances can be overwhelming. Our app offers a range of features designed specifically for startups, from budget tracking to financial planning. It helps you make informed decisions, and focus on growing your business.</p>
+                <a href="/OurPortfolio" class="btn btn-outline-primary mt-1">
+                    Learn More
+                    <i class="bx bx-chevron-right fs-lg ms-2 me-n2"></i>
+                </a>
+            </div>
+        </div>
+
+
+       
+
+
+        <!-- Stats -->
+        @* <div class="pb-5 pt-2 pt-sm-3 pt-lg-4 pt-xl-5">
+            <div class="swiper pb-sm-2 pb-md-4 pb-lg-5 mb-xxl-3 mx-n2" data-swiper-options='{
+              "slidesPerView": 1,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+              },
+              "breakpoints": {
+                "500": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 8
+                },
+                "650": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 8
+                },
+                "900": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 8
+                },
+                "1100": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 8
+                }
+              }
+            }'>
+                <div class="swiper-wrapper">
+
+                    <!-- Item -->
+                    <div class="swiper-slide h-auto py-3">
+                        <div class="card border-0 shadow h-100 text-center text-sm-start p-3 mx-2">
+                            <div class="card-body">
+                                <img src="~/assets/img/landing/app-showcase-3/features/payment.svg" style="filter: drop-shadow(0px 0.8645132780075073px 4.602016925811768px rgba(99, 102, 241, 0.02)) drop-shadow(0px 2.9037201404571533px 10.33138370513916px rgba(99, 102, 241, 0.05)) drop-shadow(0px 13px 27px rgba(99, 102, 241, 0.17));" alt="Payment icon">
+                                <h3 class="h1 pt-4 mb-1">355 <span class="h4">billions</span></h3>
+                                <p class="fs-lg mb-0">Money spent</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide h-auto py-3">
+                        <div class="card border-0 shadow h-100 text-center text-sm-start p-3 mx-2">
+                            <div class="card-body">
+                                <img src="~/assets/img/landing/app-showcase-3/features/users.svg" style="filter: drop-shadow(0px 0.8645132780075073px 4.602016925811768px rgba(8, 14, 138, 0.02)) drop-shadow(0px 2.9037201404571533px 10.33138370513916px rgba(8, 14, 138, 0.04)) drop-shadow(0px 15px 30px rgba(8, 14, 138, 0.10));" alt="Users icon">
+                                <h3 class="h1 pt-4 mb-1">3.4 <span class="h4">millions</span></h3>
+                                <p class="fs-lg mb-0">Application users</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide h-auto py-3">
+                        <div class="card border-0 shadow h-100 text-center text-sm-start p-3 mx-2">
+                            <div class="card-body">
+                                <img src="~/assets/img/landing/app-showcase-3/features/statistics.svg" style="filter: drop-shadow(0px 0.8645132780075073px 4.602016925811768px rgba(99, 102, 241, 0.02)) drop-shadow(0px 2.9037201404571533px 10.33138370513916px rgba(99, 102, 241, 0.05)) drop-shadow(0px 13px 27px rgba(99, 102, 241, 0.17));" alt="Statistics icon">
+                                <h3 class="h1 pt-4 mb-1">1.2 <span class="h4">billions</span></h3>
+                                <p class="fs-lg mb-0">Transactions a month</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide h-auto py-3">
+                        <div class="card border-0 shadow h-100 text-center text-sm-start p-3 mx-2">
+                            <div class="card-body">
+                                <img src="~/assets/img/landing/app-showcase-3/features/cashback.svg" style="filter: drop-shadow(0px 0.8645132780075073px 4.602016925811768px rgba(8, 14, 138, 0.02)) drop-shadow(0px 2.9037201404571533px 10.33138370513916px rgba(8, 14, 138, 0.04)) drop-shadow(0px 14px 28px rgba(8, 14, 138, 0.10));" alt="Cashback icon">
+                                <h3 class="h1 pt-4 mb-1">1.7 <span class="h4">billions</span></h3>
+                                <p class="fs-lg mb-0">Accrued cashback</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination (bullets) -->
+                <div class="swiper-pagination position-relative pt-2 mt-4"></div>
+            </div>
+        </div> *@
+    </div>
+</section>
+
+
+
+
+<!-- Features -->
+<section class="container py-5 my-2 my-md-4 my-lg-5">
+    <h2 class="h1 text-center pt-1 pt-xl-2 mb-4">Why Choose Us?</h2>
+    <p class="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">We personalize how we work to fit your project needs. Our approach helps augment innovation.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 pb-xl-3">
+        <div class="col text-center border-end">
+            <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
+                <img src="~/assets/img/landing/software-agency-1/features/01.svg" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 mb-2 mb-lg-0">Use a functional prototype in 24 hrs</h3>
+        </div>
+        <div class="col text-center border-end">
+            <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
+                <img src="~/assets/img/landing/software-agency-1/features/02.svg" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 mb-2 mb-lg-0">Implement an MVP within two weeks</h3>
+        </div>
+        <div class="col text-center border-end">
+            <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
+                <img src="~/assets/img/landing/software-agency-1/features/03.svg" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 mb-2 mb-lg-0">Kickstart software implemetation</h3>
+        </div>
+        <div class="col text-center">
+            <div class="card d-table border-0 rounded-circle shadow-sm p-3 mx-auto mb-4">
+                <img src="~/assets/img/landing/software-agency-1/features/04.svg" width="32" alt="Icon">
+            </div>
+            <h3 class="h5 mb-2 mb-lg-0">Get 24/7 tech &amp; business support</h3>
+        </div>
+    </div>
+</section>
+
+
+<!-- Testimonials (Slider) -->
+<section class="container pb-5 mb-md-2 mb-xl-4">
+    <div class="row pb-lg-2">
+        <div class="col-md-5 mb-4 mb-md-0">
+            <div class="card justify-content-center bg-dark h-100 p-4 p-lg-5">
+                <div class="p-2">
+                    <h3 class="display-4 text-primary mb-1">1800+</h3>
+                    <h2 class="text-light pb-5 mb-2">Clients Already Served</h2>
+                    <a href=" " class="d-inline-flex align-items-center rounded-3 text-decoration-none py-3 px-4" style="background-color: #3e4265;">
+                        <div class="pe-3">
+                            <div class="fs-xs text-light text-uppercase opaciy-70 mb-2">Reviewed on</div>
+                            <img src="~/assets/img/about/google-logo.svg" width="50" height="50" alt="Clutch">
+
+                        </div>
+                        <div class="ps-1">
+                            <div class="text-nowrap mb-2">
+                                <i class="bx bxs-star text-warning"></i>
+                                <i class="bx bxs-star text-warning"></i>
+                                <i class="bx bxs-star text-warning"></i>
+                                <i class="bx bxs-star text-warning"></i>
+                                <i class="bx bxs-star text-warning"></i>
+                            </div>
+                            <div class="text-light opacity-70">49 reviews</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="card border-0 shadow-sm p-4 p-xxl-5">
+
+                <!-- Slider prev/next buttons + Quotation mark -->
+                <div class="d-flex justify-content-between pb-4 mb-2">
+                    <span class="btn btn-icon btn-primary btn-lg shadow-primary pe-none">
+                        <i class="bx bxs-quote-left"></i>
+                    </span>
+                    <div class="d-flex">
+                        <button type="button" id="testimonial-prev" class="btn btn-prev btn-icon btn-sm me-2" aria-label="Previous">
+                            <i class="bx bx-chevron-left"></i>
+                        </button>
+                        <button type="button" id="testimonial-next" class="btn btn-next btn-icon btn-sm ms-2" aria-label="Next">
+                            <i class="bx bx-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Slider -->
+                <div class="swiper mx-0 mb-md-n2 mb-xxl-n3" data-swiper-options='{
+                "spaceBetween": 24,
+                "loop": true,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "clickable": true
+                },
+                "navigation": {
+                  "prevEl": "#testimonial-prev",
+                  "nextEl": "#testimonial-next"
+                }
+              }'>
+                    <div class="swiper-wrapper">
+
+                        <!-- Item -->
+                        <div class="swiper-slide h-auto" data-swiper-tab="#author-1">
+                            <figure class="card h-100 position-relative border-0 bg-transparent">
+                                <blockquote class="card-body p-0 mb-0">
+                                    <p class="fs-lg mb-0">
+                                        Insoft has done a great job taking our company’s idea and developing a website as per our required specifications. The team is technically strong and creative. We will not hesitate to recommend them.
+                                        Bookmart
+                                    </p>
+                                </blockquote>
+                                <figcaption class="card-footer border-0 d-flex align-items-center w-100 pb-2">
+                                    <img src="~/assets/img/avatar/05.jpg" width="48" class="rounded-circle" alt="Binit Chhantyal">
+                                    <div class="ps-3">
+                                        <h5 class="fw-semibold lh-base mb-0">Binit Chhantyal</h5>
+                                        <span class="fs-sm text-muted">Book Mart</span>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!-- Item -->
+                        <div class="swiper-slide h-auto" data-swiper-tab="#author-2">
+                            <figure class="card h-100 position-relative border-0 bg-transparent">
+                                <blockquote class="card-body p-0 mb-0">
+                                    <p class="fs-lg mb-0">Wow! what great service, I love it! Keep up the excellent work.</p>
+                                </blockquote>
+                                <figcaption class="card-footer border-0 d-flex align-items-center w-100 pb-2">
+                                    <img src="~/assets/img/avatar/06.jpg" width="48" class="rounded-circle" alt="Dr. Bharat Bdr. Khattri">
+                                    <div class="ps-3">
+                                        <h5 class="fw-semibold lh-base mb-0">Dr. Bharat Bdr. Khattri</h5>
+                                        <span class="fs-sm text-muted">Chairman, Metrocity Hospital</span>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!-- Item -->
+                        <div class="swiper-slide h-auto" data-swiper-tab="#author-3">
+                            <figure class="card h-100 position-relative border-0 bg-transparent">
+                                <blockquote class="card-body p-0 mb-0">
+                                    <p class="fs-lg mb-0">I spend an abnormal amount of time searching for the right corporate application. I contacted support and got a message back very quickly when i had a problem. Very happy! Thank you.</p>
+                                </blockquote>
+                                <figcaption class="card-footer border-0 d-flex align-items-center w-100 pb-2">
+                                    <img src="~/assets/img/avatar/01.jpg" width="48" class="rounded-circle" alt="Darrell Steward">
+                                    <div class="ps-3">
+                                        <h5 class="fw-semibold lh-base mb-0">Dawa Sherpa</h5>
+                                        <span class="fs-sm text-muted">Director, Irish Pub</span>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Pagination (bullets) -->
+                    <div class="swiper-pagination position-relative pt-3 mt-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Brands (Carousel) -->
+<section class="container pb-5 mb-lg-2 mb-xl-4">
+    <div class="swiper mx-n2" data-swiper-options='{
+          "slidesPerView": 2,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "500": {
+              "slidesPerView": 3,
+              "spaceBetween": 8
+            },
+            "650": {
+              "slidesPerView": 4,
+              "spaceBetween": 8
+            },
+            "900": {
+              "slidesPerView": 5,
+              "spaceBetween": 8
+            },
+            "1100": {
+              "slidesPerView": 6,
+              "spaceBetween": 8
+            }
+          }
+        }'>
+        <div class="swiper-wrapper">
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+                <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="~/assets/img/brands/01.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+                <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="~/assets/img/brands/02.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+                <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="~/assets/img/brands/03.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+                <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="~/assets/img/brands/04.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+                <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="~/assets/img/brands/05.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+                </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+                <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="~/assets/img/brands/06.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+                </a>
+            </div>
+
+             <!-- Item -->
+            <div class="swiper-slide py-3">
+                <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="~/assets/img/brands/06.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+                </a>
+            </div>
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+                <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="~/assets/img/brands/06.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Pagination (bullets) -->
+        <div class="swiper-pagination position-relative pt-2 mt-4"></div>
+    </div>
+</section>
+
+
+
+<!-- FAQ -->
+<section class="container py-5 mb-lg-2">
+    <div class="row py-2 py-md-4 py-lg-5">
+        <div class="col-xl-4 col-md-5 text-center text-md-start pt-md-2 pb-2 pb-md-0 mb-4 mb-md-0">
+            <h2 class="pb-3 mb-1 mb-lg-3">Any questions? <br class="d-none d-md-inline">Check out the FAQs</h2>
+            <p class="fs-lg pb-3 mb-2 mb-lg-3">Still have unanswered questions and need to get in touch?</p>
+            <div class="row row-cols-1 row-cols-sm-2 g-3 g-sm-4">
+                <div class="col">
+                    <div class="card card-hover">
+                        <div class="card-body pb-3">
+                            <i class="bx bxs-phone-call d-block fs-2 text-primary mb-2 py-1"></i>
+                            <p class="fs-sm mb-2">Still have  questions?</p>
+                            <a href="tel:+97761-540815" class="btn btn-link stretched-link px-0">
+                                Call us
+                                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-hover">
+                        <div class="card-body pb-3">
+                            <i class="bx bx-message-rounded-dots d-block fs-2 text-success mb-2 py-1"></i>
+                            <p class="fs-sm mb-2">Still have  questions?</p>
+                            <a href="/Contact" class="btn btn-link text-success stretched-link px-0">
+                                Contact Us
+                                <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 offset-xl-1">
+            <div class="accordion" id="faq">
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h2 class="accordion-header" id="q1-heading">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="true" aria-controls="q1">
+                            What is Insoft ?
+                        </button>
+                    </h2>
+                    <div id="q1" class="accordion-collapse collapse show" aria-labelledby="q1-heading" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Insoft is a software development company headquartered in Pokhara, Nepal, specializing in providing robust, secure, and IRD-certified systems for businesses. Established on 2065-10-17 BS, Insoft focuses on creating innovative IT solutions, offering services in organizational automation, web-based and desktop-based platforms, and hardware sales and maintenance. </p>
+                            <p class="mb-0">With a strong commitment to quality and client satisfaction, Insoft aims to be a transformational partner, leveraging its expertise and infrastructure to help businesses achieve exceptional results.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h2 class="accordion-header" id="q2-heading">
+                        <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2" aria-expanded="false" aria-controls="q2">
+                            How much experience your team has?
+                        </button>
+                    </h2>
+                    <div id="q2" class="accordion-collapse collapse" aria-labelledby="q2-heading" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Our team at Insoft brings together a wealth of experience, with years of expertise in software development, hardware solutions, and IT consulting. Comprised of dedicated professionals, we continually refine our skills to stay ahead in technology and innovation. </p>
+                            <p class="mb-0">With experience across various sectors, we are adept at delivering IRD-certified, secure, and robust solutions tailored to our clients’ needs, empowering businesses with cutting-edge tools and support.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h2 class="accordion-header" id="q5-heading">
+                        <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5" aria-expanded="false" aria-controls="q5">
+                            What security measures does Insoft implement to protect sensitive data?
+                        </button>
+                    </h2>
+                    <div id="q5" class="accordion-collapse collapse" aria-labelledby="q5-heading" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>Insoft ensures data security through robust measures, including encryption, role-based access controls, and regular security audits. </p>
+                            <p class="mb-0">We use firewalls and intrusion detection systems to protect against external threats, conduct regular data backups for recovery, and provide security training for our staff. These strategies create a secure environment for all client data and transactions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h2 class="accordion-header" id="q3-heading">
+                        <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3" aria-expanded="false" aria-controls="q3">
+                            How to contact Insoft sales ?
+                        </button>
+                    </h2>
+                    <div id="q3" class="accordion-collapse collapse" aria-labelledby="q3-heading" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>You can contact Insoft sales at</p>
+                            <p class="mb-0">+977-9802806276 <br />  +977-9802806275 </> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h2 class="accordion-header" id="q4-heading">
+                        <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4" aria-expanded="false" aria-controls="q4">
+                            How to contact Insoft support ?
+                        </button>
+                    </h2>
+                    <div id="q4" class="accordion-collapse collapse" aria-labelledby="q4-heading" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p>For any help you can contact our support at</p>
+                            <p class="mb-0">+97761-540815 <br />  +97761-539579 </p>
+                        </div>
+                    </div>
+                </div>
+                
+              
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- News slider -->
+@* <section class="bg-secondary border-bottom border-light py-5">
+    <div class="container py-md-3 py-lg-5">
+        <h2 class="h1 text-center pb-2">News &amp; Insights</h2>
+        <div class="position-relative mx-md-2 px-md-5">
+
+            <!-- Slider controls (Prev / next) -->
+            <button type="button" id="news-prev" class="btn btn-prev btn-icon btn-sm position-absolute top-50 start-0 translate-middle-y mt-n4 d-none d-md-inline-flex" aria-label="Previous">
+                <i class="bx bx-chevron-left"></i>
+            </button>
+            <button type="button" id="news-next" class="btn btn-next btn-icon btn-sm position-absolute top-50 end-0 translate-middle-y mt-n4 d-none d-md-inline-flex" aria-label="Next">
+                <i class="bx bx-chevron-right"></i>
+            </button>
+
+            <!-- Swiper slider -->
+            <div class="swiper swiper-nav-onhover mx-n2" data-swiper-options='{
+              "slidesPerView": 1,
+              "loop": true,
+              "spaceBetween": 8,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+              },
+              "navigation": {
+                "prevEl": "#news-prev",
+                "nextEl": "#news-next"
+              },
+              "breakpoints": {
+                "0": {
+                  "slidesPerView": 1
+                },
+                "560": {
+                  "slidesPerView": 2
+                },
+                "992": {
+                  "slidesPerView": 3
+                }
+              }
+            }'>
+               <div class="swiper-wrapper">
+
+                    <!-- Item -->
+                    <div class="swiper-slide h-auto py-3">
+                        <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                            <div class="card-body pb-0">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Tech</a>
+                                    <span class="fs-sm text-muted">1 day ago</span>
+                                </div>
+                                <h3 class="h4">
+                                    <a href="/blog/blogsingle" class="stretched-link">How the Millennial Lifestyle Changes as Service Prices Rise</a>
+                                </h3>
+                                <p class="mb-0">Sit facilisis dolor arcu, fermentum vestibulum arcu elementum imperdiet. Mauris duis eleifend faucibus amet sagittis.</p>
+                            </div>
+                            <div class="card-footer d-flex align-items-center py-4 text-muted border-top-0">
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-like fs-lg me-1"></i>
+                                    <span class="fs-sm">2</span>
+                                </div>
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-comment fs-lg me-1"></i>
+                                    <span class="fs-sm">0</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bx bx-share-alt fs-lg me-1"></i>
+                                    <span class="fs-sm">3</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide h-auto py-3">
+                        <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                            <div class="card-body pb-0">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Strategy</a>
+                                    <span class="fs-sm text-muted">12 hours ago</span>
+                                </div>
+                                <h3 class="h4">
+                                    <a href="/blog/blogsingle" class="stretched-link">Mobile App Generates Data for the Energy Management</a>
+                                </h3>
+                                <p class="mb-0">Sociis sit risus id. Sit facilisis dolor arcu, fermentum vestibulum arcu ele. Pulvinar at maecenas maecenas pharetra, tincidunt sollicitudin in in. </p>
+                            </div>
+                            <div class="card-footer d-flex align-items-center py-4 text-muted border-top-0">
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-like fs-lg me-1"></i>
+                                    <span class="fs-sm">8</span>
+                                </div>
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-comment fs-lg me-1"></i>
+                                    <span class="fs-sm">4</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bx bx-share-alt fs-lg me-1"></i>
+                                    <span class="fs-sm">2</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide h-auto py-3">
+                        <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                            <div class="card-body pb-0">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Software</a>
+                                    <span class="fs-sm text-muted">May 24, 2023</span>
+                                </div>
+                                <h3 class="h4">
+                                    <a href="/blog/blogsingle" class="stretched-link">What the Software Stock Slump Means for the Market</a>
+                                </h3>
+                                <p class="mb-0">Id mollis consectetur congue egestas egestas suspendisse blandit justo. Tellus augue commodo id quis tempus etiam pulvinar at maecenas.</p>
+                            </div>
+                            <div class="card-footer d-flex align-items-center py-4 text-muted border-top-0">
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-like fs-lg me-1"></i>
+                                    <span class="fs-sm">6</span>
+                                </div>
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-comment fs-lg me-1"></i>
+                                    <span class="fs-sm">1</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bx bx-share-alt fs-lg me-1"></i>
+                                    <span class="fs-sm">5</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide h-auto py-3">
+                        <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                            <div class="card-body pb-0">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Startups</a>
+                                    <span class="fs-sm text-muted">Sep 3, 2023</span>
+                                </div>
+                                <h3 class="h4">
+                                    <a href="/blog/blogsingle" class="stretched-link">5 Bad Landing Page Examples &amp; How We Would Fix Them</a>
+                                </h3>
+                                <p class="mb-0">Totam, soluta placeat hic adipisci reprehenderit iusto est nulla dolorum doloremque inventore suscipit consequuntur distinctio id.</p>
+                            </div>
+                            <div class="card-footer d-flex align-items-center py-4 text-muted border-top-0">
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-like fs-lg me-1"></i>
+                                    <span class="fs-sm">8</span>
+                                </div>
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-comment fs-lg me-1"></i>
+                                    <span class="fs-sm">7</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bx bx-share-alt fs-lg me-1"></i>
+                                    <span class="fs-sm">3</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide h-auto py-3">
+                        <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary h-100 mx-2">
+                            <div class="card-body pb-0">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none position-relative zindex-2">Technology</a>
+                                    <span class="fs-sm text-muted">Aug 19, 2023</span>
+                                </div>
+                                <h3 class="h4">
+                                    <a href="/blog/blogsingle" class="stretched-link">Why UX Design Matters and How it Affects Ranking</a>
+                                </h3>
+                                <p class="mb-0">Quaerat quos assumenda numquam dolorem, repellendus est, itaque sint et odio perferendis laudantium laboriosam.</p>
+                            </div>
+                            <div class="card-footer d-flex align-items-center py-4 text-muted border-top-0">
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-like fs-lg me-1"></i>
+                                    <span class="fs-sm">5</span>
+                                </div>
+                                <div class="d-flex align-items-center me-3">
+                                    <i class="bx bx-comment fs-lg me-1"></i>
+                                    <span class="fs-sm">3</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bx bx-share-alt fs-lg me-1"></i>
+                                    <span class="fs-sm">9</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Pagination (bullets) -->
+                <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+            </div> 
+        </div>
+    </div>
+</section> *@
+
+
+<!-- CTA -->
+<section class="position-relative bg-dark py-5">
+    <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+    <div class="container position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+        <p class="lead text-light opacity-70 mb-3">Ready to get started?</p>
+        <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Launch Your Project with Us</h2>
+        <a href="/Contact" class="btn btn-primary shadow-primary btn-lg">Work with us</a>
+    </div>
+</section>
+@section footer {
+    <footer class="footer bg-dark pt-5 pb-4 pb-lg-5" data-bs-theme="dark">
+        <div class="container pt-lg-4">
+            <div class="row pb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
+                        <img src="~/assets/img/logo/logoinsoft.png" width="100" alt="Insoft Nepal">
+                    </div>
+                    <p class="fs-5 text-light opacity-70 pb-lg-3 mb-4">The software development company, HQ(Pokhara, Nepal). We want you to have a managed, rigid, robust, secure, IRD certified, system for your business which you work so hard for.</p>
+                </div>
+                <div class="col-xl-6 col-lg-7 col-md-5 offset-xl-2 offset-md-1 pt-4 pt-md-1 pt-lg-0">
+                    <div id="footer-links" class="row">
+                        <div class="col-lg-4">
+                            <h6 class="mb-2">
+                                <a href="#useful-links" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Useful Links</a>
+                            </h6>
+                            <div id="useful-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
+                                <ul class="nav flex-column pb-lg-1 mb-lg-3">
+                                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Home</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Services</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">About Us</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">News &amp; Insights</a></li>
+                                </ul>
+                                <ul class="nav flex-column mb-2 mb-lg-0">
+                                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Terms &amp; Conditions</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-3">
+                            <h6 class="mb-2">
+                                <a href="#social-links" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Socials</a>
+                            </h6>
+                            <div id="social-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
+                                <ul class="nav flex-column mb-2 mb-lg-0">
+                                    <li class="nav-item"><a href="https: //www.facebook.com/InsoftResearchAndDevelopment/" class="nav-link d-inline-block px-0 pt-1 pb-2">Facebook</a></li>
+                                    <li class="nav-item"><a href="https://www.linkedin.com/company/insoft-research-development" class="nav-link d-inline-block px-0 pt-1 pb-2">LinkedIn</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Twitter</a></li>
+                                    <li class="nav-item"><a href="https://www.youtube.com/@@insoftnepal9246" class="nav-link d-inline-block px-0 pt-1 pb-2">YouTube</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 pt-2 pt-lg-0">
+                            <h6 class="mb-2">
+                                <a href="#contact-links" class="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Contact Us</a>
+                            </h6>
+                            <div id="contact-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
+                                <ul class="nav flex-column mb-2 mb-lg-0">
+                                    <li class="nav-item"><a href="mailto:info@insoftnepal.com" class="fw-medium">info@insoftnepal.com</a></li>
+                                    <li class="nav-item"><a href="tel:+97761-540815" class="fw-medium">+97761-540815</a></li>
+                                    <li class="nav-item"><a href="tel:+97761-539579" class="fw-medium">+97761-539579</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0">
+                <span class="text-light opacity-50">Copyright &copy; 2024 All rights reserved. Made by </span>
+                <a class="nav-link d-inline-block p-0" href="#" target="_blank" rel="noopener">Insoft Research And Development</a>
+            </p>
+        </div>
+    </footer>
+}
+@section scripts {
+
+    <script src="~/assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+}
